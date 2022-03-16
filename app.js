@@ -15,5 +15,5 @@ async function startServer(port, db_url) {
 
 startServer(
     process.env.PORT || 4000,
-    process.env.DB_URL || "mongodb://localhost:27017/kmp"
+    process.env.DB_URL || "mongodb+srv://giftps:giftpspass@wnocluster.ulpq8.mongodb.net/widenout?retryWrites=true&w=majority"
 );
