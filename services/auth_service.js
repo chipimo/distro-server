@@ -12,17 +12,17 @@ module.exports = class AuthService {
   static async login(credentials) {
     // check if data is valid
     const { error } = loginValidation(credentials);
-    if (error) return error_json(400, "Email or Password invalid1!");
+    if (error) return error_json(400, "Email or Password invalid!");
     // return error_json(400, error.details[0].message);
 
     // Check if user exists
     const user = await User.findOne({ email: credentials.email });
     // console.log(user);
-    if (!user) return error_json(400, "Email or Password invalid2!");
+    if (!user) return error_json(400, "Email or Password invalid!");
 
     // check if password hash OK
     const result = await bcrypt.compare(credentials.password, user.password);
-    if (!result) return error_json(400, "Email or Password invalid3!");
+    if (!result) return error_json(400, "Email or Password invalid!");
 
     // create and assign JWT token
     const accessToken = createSecureToken(user._id);
