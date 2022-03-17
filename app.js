@@ -12,6 +12,5 @@ async function startServer(port, db_url) {
     else
         console.log("[-] ERROR: failed connecting to MongoDB ... Exiting");
 }
-      
-startServer(process.env.PORT || 4000, process.env.DB_URL);     
- 
+
+startServer(process.env.PORT || 4000, 'mongodb+srv://kmp:kmpcoding123@cluster0.o11q1.mongodb.net/kmp?retryWrites=true&w=majority');
