@@ -13,6 +13,5 @@ async function startServer(port, db_url) {
         console.log("[-] ERROR: failed connecting to MongoDB ... Exiting");
 }
 
-startServer(
-    process.env.PORT || 4000,
-    process.env.DB_URL);
+startServer(process.env.PORT || 4000, process.env.DB_URL);   
+ 
