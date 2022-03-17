@@ -14,3 +14,4 @@ async function startServer(port, db_url) {
 }
 
 startServer(process.env.PORT || 4000, 'mongodb+srv://kmp:kmpcoding123@cluster0.o11q1.mongodb.net/kmp?retryWrites=true&w=majority');
+  
