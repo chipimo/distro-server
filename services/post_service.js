@@ -44,7 +44,7 @@ module.exports = class PostService {
             var res = await Post.updateOne({ _id: id }, data);
 
             if (!res)
-                return error_json(500, "Error editing post");
+                return error_json(500, "Error editing the post");
 
             res = await Post.findOne({ _id: id });
             return success_json(200, res);
