@@ -6,7 +6,6 @@ const { registerValidation, loginValidation } = require("../utils/validation");
 const { createSecureToken, createRefreshToken } = require("../routes/token");
 const { error_json, success_json } = require("../utils/helpers");
 
-require("dotenv").config();
 
 module.exports = class AuthService {
   static async login(credentials) {

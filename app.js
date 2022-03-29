@@ -2,7 +2,7 @@ const express = require('express')
 const loaders = require('./loaders/index');
 const config = require('./config/config');
 
-require('dotenv').config({ path: config.DOTENV });
+require('dotenv').config();
 
 async function startServer(port, db_url) {
     const app = express();
