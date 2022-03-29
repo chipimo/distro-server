@@ -3,8 +3,6 @@ const fs = require("fs");
 const User = require("../models/user");
 const config = require("../config/config");
 
-require("dotenv").config();
-
 const createSecureToken = function (id) {
   // var privateKey = fs.readFileSync(config.PRIVATE_KEY, 'utf8');
   var privateKey = process.env.PRIVATE_KEY;

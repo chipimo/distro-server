@@ -117,7 +117,8 @@ module.exports = class AuthService {
     if (!registerValidation)
       return error_json(500, "Error registering user ... please try again");
 
-    var privateKey = process.env.PRIVATE_KEY;
+    var privateKey = 'dd5f3089-40c3-403d-af14-d0c228b05cb4';
+    // var privateKey = process.env.PRIVATE_KEY;
 
     const accessToken = jwt.sign({ id: user._id }, privateKey, {
       expiresIn: "12h",
