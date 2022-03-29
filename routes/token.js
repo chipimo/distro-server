@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const User = require("../models/user");
-const config = require("../config/config");
+// const config = require("../config/config");
 
 const createSecureToken = function (id) {
   // var privateKey = fs.readFileSync(config.PRIVATE_KEY, 'utf8');
