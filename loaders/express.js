@@ -15,7 +15,7 @@ module.exports = async ({ app }) => {
         optionSuccessStatus: 200,
     }
 
-    app.use(helmet())           // security headers middleware
+    // app.use(helmet())           // security headers middleware
     app.use(express.json());    // body parser
     // app.use(cors(corsOptions));            // cros-origin middleware
 
