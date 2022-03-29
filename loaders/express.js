@@ -8,7 +8,7 @@ const helmet = require('helmet')
 module.exports = async ({ app }) => {
 
     var corsOptions = {
-        origin: '*',
+        origin: 'http://localhost:3000',
         optionsSuccessStatus: 200, // For legacy browser support
         credentials: true, // This is important.
     }
