@@ -29,11 +29,11 @@ module.exports = class UserService {
     static async setNewRelease(userData) {
 console.log(userData);
 
-        var user = await User.findById({ _id: userData.userData.id }, { password: 0 });
+        var user = await User.findById({ _id: userData.id }, { password: 0 });
         if (!user)
             return error_json(404, "User not found");
         else {
-            var res = await User.updateOne({ _id: userData.userData.id }, {
+            var res = await User.updateOne({ _id: userData.id }, {
                 $set: {
                     releases: {
                         music: { single: [] },
@@ -51,7 +51,7 @@ console.log(userData);
                 }
             });
             if (res) {
-                var UpdatedUser = await User.findById({ _id: userData.userData.id }, { password: 0 });
+                var UpdatedUser = await User.findById({ _id: userData.id }, { password: 0 });
 
                 const userDataUpdate = {
                     id: UpdatedUser._id,
