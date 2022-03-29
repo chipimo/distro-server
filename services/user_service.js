@@ -27,6 +27,7 @@ module.exports = class UserService {
     }
 
     static async setNewRelease(userData) {
+console.log(userData);
 
         var user = await User.findById({ _id: userData.userData.id }, { password: 0 });
         if (!user)

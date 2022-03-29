@@ -4,8 +4,6 @@ const config = require('./config/config');
 
 require('dotenv').config({ path: config });
 
-console.log(process.env)
-
 async function startServer(port, db_url) {
     const app = express();
     const loaded = await loaders.init({ expressApp: app, dbUrl: db_url });
