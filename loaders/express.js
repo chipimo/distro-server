@@ -7,17 +7,17 @@ const helmet = require('helmet')
 
 module.exports = async ({ app }) => {
 
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Allow-Credentials", true);
-        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-        res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-        next();
-    });
+    var corsOptions = {
+        origin: 'http://localhost:3000/',
+        // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+        //         origin:'*', 
+        credentials: true,            //access-control-allow-credentials:true
+        optionSuccessStatus: 200,
+    }
 
-    // app.use(helmet())           // security headers middleware
+    app.use(helmet())           // security headers middleware
     app.use(express.json());    // body parser
-    // app.use(cors(corsOptions));            // cros-origin middleware
+    app.use(cors(corsOptions));            // cros-origin middleware
 
     // setup routes
     app.use('/api', postRoutes);
