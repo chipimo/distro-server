@@ -110,7 +110,7 @@ module.exports = class AuthService {
           action: "manage",
           subject: "all",
         },
-      ],
+      ], 
     };
 
     var registeredUser = await user.save();
@@ -118,7 +118,7 @@ module.exports = class AuthService {
       return error_json(500, "Error registering user ... please try again");
 
     var privateKey = process.env.PRIVATE_KEY;
-
+ 
     const accessToken = jwt.sign({ id: user._id }, privateKey, {
       expiresIn: "12h",
     });
