@@ -6,7 +6,6 @@ const { registerValidation, loginValidation } = require("../utils/validation");
 const { createSecureToken, createRefreshToken } = require("../routes/token");
 const { error_json, success_json } = require("../utils/helpers");
 
-
 module.exports = class AuthService {
   static async login(credentials) {
     // check if data is valid
@@ -110,7 +109,7 @@ module.exports = class AuthService {
           action: "manage",
           subject: "all",
         },
-      ], 
+      ],
     };
 
     var registeredUser = await user.save();
@@ -118,7 +117,7 @@ module.exports = class AuthService {
       return error_json(500, "Error registering user ... please try again");
 
     var privateKey = process.env.PRIVATE_KEY;
- 
+
     const accessToken = jwt.sign({ id: user._id }, privateKey, {
       expiresIn: "12h",
     });
