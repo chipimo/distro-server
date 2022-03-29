@@ -8,7 +8,7 @@ const helmet = require('helmet')
 module.exports = async ({ app }) => {
 
     var corsOptions = {
-        origin: 'http://localhost:3000/',
+        origin: 'http://localhost:3000/login',
         // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
         //         origin:'*', 
         credentials: true,            //access-control-allow-credentials:true
